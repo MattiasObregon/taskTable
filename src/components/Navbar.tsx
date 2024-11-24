@@ -43,13 +43,13 @@ export function Navbar() {
   };
 
   return (
-    <nav className="bg-blue-800 p-4 text-white flex justify-between items-center rounded-[12px] shadow-lg">
-      <div className="flex items-center">
+    <nav className="bg-blue-800 p-4 text-white flex flex-col sm:flex-row justify-between items-center rounded-[12px] shadow-lg">
+      <div className="flex items-center mb-4 sm:mb-0">
         <CreateTaskButton language={language} />
         <span className="ml-4 text-[18px] font-bold">{userName}</span>
       </div>
-      <h1 className="text-2xl font-bold">{translations[language].appName}</h1>
-      <div className="flex items-center">
+      <h1 className="text-xl sm:text-2xl font-bold">{translations[language].appName}</h1>
+      <div className="flex items-center mt-4 sm:mt-0">
         <select
           value={language}
           onChange={(e) => setLanguage(e.target.value as Language)}
