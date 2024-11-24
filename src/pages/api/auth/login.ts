@@ -12,7 +12,7 @@ export default async function handler(
 
   try {
     const { email, password } = req.body
-    //console.log('Intentando login con:', email)
+    console.log('Intentando login con:', email)
 
     const { data: user, error: dbError } = await supabase
       .from('User')
@@ -21,14 +21,14 @@ export default async function handler(
       .single()
 
     if (dbError || !user) {
-      //console.log('Error al buscar usuario:', dbError)
+      console.log('Error al buscar usuario:', dbError)
       return res.status(401).json({ message: 'Credenciales inválidas' })
     }
 
     const isValidPassword = await bcrypt.compare(password, user.password)
 
     if (!isValidPassword) {
-      //console.log('Contraseña inválida')
+      console.log('Contraseña inválida')
       return res.status(401).json({ message: 'Credenciales inválidas' })
     }
 
@@ -51,7 +51,7 @@ export default async function handler(
       }
     })
   } catch (error) {
-    //console.error('Error general:', error)
+    console.error('Error general:', error)
     res.status(500).json({ message: 'Error del servidor' })
   }
 }
