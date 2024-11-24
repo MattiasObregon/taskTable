@@ -27,8 +27,8 @@ export function Register() {
       if (response.ok) {
         Swal.fire({
           icon: 'success',
-          title: translations[language].successMessage,
-          text: translations[language].userCreated,
+          title: translations[language].registerSuccessTitle,
+          text: translations[language].registerSuccessMessage,
         })
         router.push('/')
       } else {
