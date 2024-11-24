@@ -18,13 +18,13 @@ export default async function handler(
       .eq('id', id);
 
     if (error) {
-      console.error('Error al eliminar tarea:', error);
+      //console.error('Error al eliminar tarea:', error);
       return res.status(500).json({ message: 'Error al eliminar tarea' });
     }
 
     return res.status(200).json({ message: 'Tarea eliminada exitosamente' });
   } catch (error) {
-    console.error('Error:', error);
+    //onsole.error('Error:', error);
     return res.status(500).json({ message: 'Error al eliminar tarea' });
   }
 } 

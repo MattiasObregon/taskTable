@@ -33,7 +33,7 @@ export default async function handler(
 
     return res.status(200).json(updatedTask)
   } catch (error) {
-    console.error('Error:', error)
+    //console.error('Error:', error)
     return res.status(500).json({ message: 'Error al intentar actualizar tarea' })
   }
 } 

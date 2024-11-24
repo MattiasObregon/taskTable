@@ -36,7 +36,7 @@ export default async function handler(
       ])
 
     if (dbError) {
-      console.error('DB Error:', dbError)
+      //console.error('DB Error:', dbError)
       return res.status(400).json({ message: dbError.message })
     }
 
@@ -45,7 +45,7 @@ export default async function handler(
       user: authData.user 
     })
   } catch (error) {
-    console.error('Error:', error)
+    //console.error('Error:', error)
     res.status(500).json({ message: 'Error del servidor' })
   }
 } 
