@@ -184,7 +184,7 @@ export function Board() {
     <div>
       <Navbar />
       <DragDropContext onDragEnd={handleDragEnd}>
-        <div className='grid mt-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 bg-transparent'>
+        <div className='grid  mt-16 grid-rows-1  grid-cols-3   mb-16" bg-transparent'>
           {Object.values(columns).map(col => (
             <Column 
               id={col.id} 

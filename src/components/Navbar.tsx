@@ -7,7 +7,6 @@ import translations from '../translations';
 
 type Language = 'es' | 'en';
 
-
 export function Navbar() {
   const { language, setLanguage } = useLanguage();
   const router = useRouter();
@@ -46,6 +45,18 @@ export function Navbar() {
     <nav className="bg-blue-800 p-4 text-white flex flex-col sm:flex-row justify-between items-center rounded-[12px] shadow-lg">
       <div className="flex items-center mb-4 sm:mb-0">
         <CreateTaskButton language={language} />
+        <button 
+          onClick={() => router.push('/task-list')}
+          className="bg-green-500 px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300"
+        >
+          {translations[language].taskListTitle}
+        </button>
+        <button 
+          onClick={() => router.push('/dashboard')}
+          className="bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 ml-2"
+        >
+          {translations[language].dashboardTitle}
+        </button>
         <span className="ml-4 text-[18px] font-bold">{userName}</span>
       </div>
       <h1 className="text-xl sm:text-2xl font-bold">{translations[language].appName}</h1>

@@ -35,7 +35,7 @@ export function Register() {
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          text: data.message || translations[language].errorMessage,
+          text: data.message || translations[language].registerErrorMessage,
         })
       }
     } catch (error) {
@@ -43,7 +43,7 @@ export function Register() {
       Swal.fire({
         icon: 'error',
         title: 'Error',
-        text: translations[language].errorMessage,
+        text: translations[language].registerErrorMessage,
       })
     }
   }
